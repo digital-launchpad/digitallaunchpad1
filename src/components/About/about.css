@@ -1,0 +1,233 @@
+/* ==========================================================================
+   1. MAIN SECTION INFRASTRUCTURE & BANNER SPLIT
+   ========================================================================== */
+.about-section {
+    padding: 100px 10% 80px 10%;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.about-hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.about-tagline {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #6b7280;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.aboutHeading {
+    font-size: 46px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 30px 0;
+    background: linear-gradient(135deg, #FFC107 10%, #FF2E2E 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0px 0px 25px rgba(255, 46, 46, 0.2));
+}
+
+.about-paragraph {
+    color: #9ca3af;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-paragraph.highlight-p {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-paragraph strong {
+    color: #FFC107;
+}
+
+/* ==========================================================================
+   2. RIGHT PANEL FEATURE STAT CARDS
+   ========================================================================== */
+.about-hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateX(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.stat-card.animate-glow {
+    border-color: rgba(255, 46, 46, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 46, 46, 0.05);
+}
+
+.stat-icon {
+    font-size: 24px;
+    color: #FFC107;
+    margin-bottom: 12px;
+}
+
+.stat-icon.special-color {
+    color: #FF2E2E;
+}
+
+.stat-card h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.stat-card p {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   3. MIDDLE PANEL INFRASTRUCTURE
+   ========================================================================== */
+.about-mission-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 4px solid #FF2E2E;
+    padding: 30px;
+    border-radius: 0 20px 20px 0;
+    margin: 60px 0;
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   4. TEAM INFRASTRUCTURE MEMBERS SECTIONS
+   ========================================================================== */
+.team-section-container {
+    width: 100%;
+    margin-top: 40px;
+    display: none;
+}
+
+.team-section-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-profile-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.team-profile-card:hover {
+    transform: translateY(-5px);
+    border-color: #FFC107;
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.08);
+}
+
+.profile-img-placeholder {
+    width: 100%;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-img-placeholder span {
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-info h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.profile-info p {
+    color: #FFC107;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. DYNAMIC RESPONSIVE CONTROLS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .about-hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .about-hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .stat-card {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 5% 40px 5%;
+    }
+    .aboutHeading {
+        font-size: 34px;
+    }
+    .about-hero-stats {
+        flex-direction: column;
+    }
+    .about-mission-panel {
+        padding: 20px;
+        margin: 40px 0;
+    }
+}

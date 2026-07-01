@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #070a10; 
+}
+
+body {
+    position: relative;
+    overflow-x: hidden; 
+   background-image: 
+        radial-gradient(circle at 80% 20%, rgba(224, 86, 36, 0.15), transparent 50%),
+        radial-gradient(circle at 15% 75%, rgba(32, 201, 151, 0.12), transparent 50%),
+        linear-gradient(135deg, #0b0f19 0%, #111827 50%, #070a10 100%);
+    
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 200%; 
+    height: 100%;
+    opacity: 0.18; 
+    pointer-events: none; 
+    z-index: 0; 
+
+    background-image: 
+        linear-gradient(to right, #20c997 1px, transparent 1px),
+        linear-gradient(to bottom, #20c997 1px, transparent 1px);
+    background-size: 90px 90px; 
+  
+    mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 95%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 95%);
+
+    animation: moveGrid 25s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-900px); 
+    }
+}
+
+
+#root, main, section {
+    position: relative;
+    z-index: 1;
+}

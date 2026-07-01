@@ -1,0 +1,195 @@
+/* ==========================================================================
+   1. MAIN FOOTER WRAPPER
+   ========================================================================== */
+.footer-section {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 60px 10% 20px 10%;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   2. BLOCK 1: BRANDING & SOCIAL HANDLES
+   ========================================================================== */
+.footer-logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: #FF2E2E;
+}
+
+.footer-bio {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    max-width: 380px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #FFC107 0%, #FF2E2E 100%);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 46, 46, 0.3);
+}
+
+/* ==========================================================================
+   3. BLOCK 2 & 3: LINKS & LINKS GRID HEADINGS
+   ========================================================================== */
+.footer-container h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-block ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.footer-links-block ul li a:hover {
+    color: #FFC107;
+    padding-left: 4px;
+}
+
+/* Contact Blocks Config */
+.footer-contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-contact-item svg {
+    color: #FFC107;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.footer-contact-item p {
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 0;
+    word-break: break-all;
+}
+
+/* ==========================================================================
+   4. BOTTOM COPYRIGHT METABAR
+   ========================================================================== */
+.footer-basebar {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-basebar p {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 0;
+}
+
+.scroll-top-btn {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.scroll-top-btn:hover {
+    color: #FFC107;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE LAYOUT RESPONSES
+   ========================================================================== */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .footer-brand-block {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-section {
+        padding: 40px 5% 20px 5%;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer-brand-block {
+        grid-column: span 1;
+    }
+    .footer-basebar {
+        flex-direction: column;
+        text-align: center;
+    }
+}

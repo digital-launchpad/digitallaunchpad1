@@ -1,0 +1,262 @@
+
+.home-hero-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 140px 10% 60px 10%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+
+.hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.hero-badge-tag {
+    background: rgba(255, 46, 46, 0.1);
+    border: 1px solid rgba(255, 46, 46, 0.2);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF2E2E;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #FF2E2E;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255, 46, 46, 0.7);
+    animation: badge-pulse 1.6s infinite;
+}
+
+@keyframes badge-pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 46, 46, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 46, 46, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 46, 46, 0); }
+}
+
+.hero-main-title {
+    color: #ffffff;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+    min-height: 140px; /* Text jump block prevent while typing strings swap */
+}
+
+/* Typing text color gradient accent mapping */
+.typing-text-wrapper span {
+    background: linear-gradient(135deg, #FFC107 10%, #FF2E2E 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    color: #9ca3af;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 35px 0;
+    max-width: 520px;
+}
+
+.accent-text {
+    color: #FFC107;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. SYMMETRICAL CTA BUTTON DESIGN SYSTEMS
+   ========================================================================== */
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+/* Left Gradient Action CTA */
+.btn-primary {
+    background: linear-gradient(135deg, #FFC107 0%, #FF2E2E 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 20px rgba(255, 46, 46, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 46, 46, 0.45);
+}
+
+/* Right Proportional WhatsApp CTA */
+.btn-whatsapp {
+    background: rgba(37, 211, 102, 0.06);
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    color: #25D366;
+    display: none;
+}
+
+.btn-whatsapp:hover {
+    background: #25D366;
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.hero-visual-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radial-glow-orb {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, rgba(255, 46, 46, 0.05) 50%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(25px);
+    animation: float-glow 6s ease-in-out infinite;
+}
+
+@keyframes float-glow {
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.1) translate(-10px, -10px); }
+}
+
+.graphic-wrapper {
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-laptop-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+}
+
+/* ==========================================================================
+   5. RESPONSIVE CONTROLS & MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .home-hero-section {
+        padding: 110px 6% 40px 6%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-grid-container {
+        grid-template-columns: 1fr; /* Stack layout vertically */
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .hero-text-block {
+        align-items: center; /* Center align everything on tablet viewports */
+    }
+    
+    .hero-badge-tag {
+        margin-bottom: 15px;
+    }
+    
+    .hero-main-title {
+        font-size: 38px; /* Reduced from 52px to prevent content overflow */
+        min-height: auto;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .hero-description {
+        font-size: 15px;
+        max-width: 600px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-cta-group {
+        justify-content: center;
+    }
+    
+    /* Make sure visual panel brings the image back into view */
+    .hero-visual-block {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .radial-glow-orb {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .hero-laptop-image {
+        max-width: 340px; /* Scales laptop beautifully below the text */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero-section {
+        padding: 90px 4% 30px 4%;
+    }
+    .hero-main-title {
+        font-size: 28px;
+    }
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cta-btn {
+        width: 100%;
+    }
+    .hero-laptop-image {
+        max-width: 100%;
+    }
+}

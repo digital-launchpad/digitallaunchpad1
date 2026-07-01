@@ -1,0 +1,215 @@
+#projects{
+    padding-top: 30px; 
+    padding-bottom: 40px;
+}
+
+.projects-section {
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Main Heading (OUR WORK BLOCK) */
+.projectHeading {
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: inline-block;
+    
+    /* Logo Exact Color Matching Gradient */
+    background: linear-gradient(135deg, #FFC107 10%, #FF2E2E 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* Neon Glow Filters */
+    filter: drop-shadow(0px 0px 20px rgba(255, 46, 46, 0.35))
+            drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Sub Heading (Recent Deliveries) */
+#projectSubHeading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding-left: 16px;
+    position: relative;
+}
+
+/* Left Indicator Green Bar */
+#projectSubHeading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 4px;
+    height: 70%;
+    background: #20c997;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(32, 201, 151, 0.6);
+}
+
+#projectSubHeading svg {
+    color: #20c997;
+}
+
+/* ==========================================================================
+   2. PROJECTS GRID SYSTEM
+   ========================================================================== */
+.projects-grid {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    cursor: pointer;
+    
+    /* Double Border and Premium Depth Layout */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    
+    /* Overflow hidden is CRITICAL—yeh image ko card se bahar phailne se rokega */
+    overflow: hidden; 
+    
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+/* Card Mockup Showcase Area (CRITICAL IMAGE HOLDER FIX) */
+.project-img-holder {
+    width: 100%;
+    height: 200px; /* Image block ki fixed framework height */
+    position: relative;
+    overflow: hidden; /* Holder se bahar phailne wali image ko crop karega */
+    background: linear-gradient(135deg, #111827, #070a10);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Image Core Settings—taaki white space automatic box me set ho jaye */
+.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image pichkegi ya phailegi nahi, frame me crop hokar fit ho jayegi */
+    object-position: top center; /* Image ka top header area hamesha pehle dikhega */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Ambient glow element inside image backdrop */
+.mockup-glow {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #20c997;
+    filter: blur(40px);
+    opacity: 0.15;
+    top: 15%;
+    left: 10%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   4. CARD TEXT & DETAILS INFORMATION AREA
+   ========================================================================== */
+.project-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.project-info p {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Technology Badge Chips Layout */
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.tag-chip {
+    font-size: 11px;
+    color: #20c997;
+    background: rgba(32, 201, 151, 0.05);
+    border: 1px solid rgba(32, 201, 151, 0.15);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* Link/CTA Button Setup */
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: auto; /* Button ko automatic hamesha card ke bottom par push karega */
+    padding-top: 12px;
+    width: fit-content;
+    transition: color 0.3s ease;
+}
+
+.project-link-btn:hover {
+    color: #FFC107; /* Hover karne par text logo ke yellow color me badal jayega */
+}
+
+/* ==========================================================================
+   5. RESPONSIVE HOVER CONTROLS (Mobile Protection Fix)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .project-card {
+        background: rgba(10, 15, 26, 0.9); /* Solid dark backing on mobile touch screen */
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+@media (hover: hover) and (min-width: 769px) {
+    .project-card:hover {
+        transform: translateY(-8px); /* Card lifts up smoothly */
+        background: rgba(10, 15, 26, 0.85);
+        border-color: rgba(32, 201, 151, 0.35);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+                    0 0 15px rgba(32, 201, 151, 0.08);
+    }
+    
+    /* Card hover hone par image ka zoom-in animation */
+    .project-card:hover .project-thumbnail {
+        transform: scale(1.05);
+    }
+}
